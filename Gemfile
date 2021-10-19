@@ -39,6 +39,7 @@ group :development do
   gem 'spring'
   gem "better_errors"
   gem "httparty", "~> 0.18.1"
+  gem "rspec-rails"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

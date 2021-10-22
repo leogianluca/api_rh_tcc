@@ -1,17 +1,17 @@
 class Api::V1::RolesController < ApplicationController
+  respond_to :json
   before_action :authenticate_user!
   before_action :set_role, only: [:show, :update, :destroy]
 
   # GET /roles
   def index
     @roles = Role.all
-
-    render json: @roles
+    render json: @roles, status: 200
   end
 
   # GET /roles/1
   def show
-    render json: @role
+    render json: @role, status: 200
   end
 
   # POST /roles
@@ -19,7 +19,7 @@ class Api::V1::RolesController < ApplicationController
     @role = Role.new(role_params)
 
     if @role.save
-      render json: @role, status: :created, location: @role
+      render json: @role, status: :created
     else
       render json: @role.errors, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class Api::V1::RolesController < ApplicationController
   # PATCH/PUT /roles/1
   def update
     if @role.update(role_params)
-      render json: @role
+      render json: @role, status: 200
     else
       render json: @role.errors, status: :unprocessable_entity
     end
@@ -37,6 +37,7 @@ class Api::V1::RolesController < ApplicationController
   # DELETE /roles/1
   def destroy
     @role.destroy
+    render json: { message: 'Função removida com sucesso!', status: 200  }
   end
 
   private

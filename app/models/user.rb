@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   include ::Devise::JWT::RevocationStrategies::JTIMatcher
 
-  # belongs_to :worker
+  belongs_to :worker, required: false
+
   attr_accessor :jti
 
   # Include default devise modules. Others available are:

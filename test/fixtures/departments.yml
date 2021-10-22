@@ -1,11 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one:
+  id: 3
+  name: Tecnologia da Informação
+  organization_id: 3
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2021-10-19 23:58:29.245343000 Z
+    zone: &1 !ruby/object:ActiveSupport::TimeZone
+      name: America/Sao_Paulo
+    time: 2021-10-19 20:58:29.245343000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2021-10-20 00:22:45.115251000 Z
+    zone: *1
+    time: 2021-10-19 21:22:45.115251000 Z

@@ -1,4 +1,5 @@
 class Api::V1::DepartmentsController < ApplicationController
+  respond_to :json
   before_action :authenticate_user!
   before_action :set_department, only: [:show, :update, :destroy]
 
@@ -10,7 +11,7 @@ class Api::V1::DepartmentsController < ApplicationController
 
   # GET /departments/1
   def show
-    render json: @department
+    render json: @department, status: 200
   end
 
   # POST /departments
@@ -18,7 +19,7 @@ class Api::V1::DepartmentsController < ApplicationController
     @department = Department.new(department_params)
 
     if @department.save
-      render json: @department, status: :created, location: @department
+      render json: @department, status: :created
     else
       render json: @department.errors, status: :unprocessable_entity
     end
@@ -27,7 +28,7 @@ class Api::V1::DepartmentsController < ApplicationController
   # PATCH/PUT /departments/1
   def update
     if @department.update(department_params)
-      render json: @department
+      render json: @department, status: 200
     else
       render json: @department.errors, status: :unprocessable_entity
     end
@@ -36,6 +37,7 @@ class Api::V1::DepartmentsController < ApplicationController
   # DELETE /departments/1
   def destroy
     @department.destroy
+    render json: { message: 'Departamento removido com sucesso!', status: 200  }
   end
 
   private

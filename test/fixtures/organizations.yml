@@ -1,11 +1,22 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one:
+  id: 3
+  company_name: DiaLog TI
+  trading_name: DiaLog TI
+  document: 53.415.273/0001-63
+  address: Rua asdsa
+  number: '10'
+  district: Nova Cintra
+  complement: ''
+  cep: 00000-000
+  city: BH
+  uf: UF
+  opening_hours: '08:00 - 18:00'
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2021-10-19 23:18:41.809319000 Z
+    zone: &1 !ruby/object:ActiveSupport::TimeZone
+      name: America/Sao_Paulo
+    time: 2021-10-19 20:18:41.809319000 Z
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: 2021-10-19 23:18:41.809319000 Z
+    zone: *1
+    time: 2021-10-19 20:18:41.809319000 Z

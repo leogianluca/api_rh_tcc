@@ -1,7 +1,6 @@
 class Api::V1::OrganizationsController < ApplicationController
   respond_to :json
-  # before_action :authenticate_user!
-  load_and_authorize_resource
+  before_action :authenticate_user!
   before_action :set_organization, only: [:show, :update, :destroy]
 
   # GET /organizations
@@ -49,8 +48,7 @@ class Api::V1::OrganizationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def organization_params
-      params.require(:organization)
-      .permit(:number, :district, :complement, :cep, :city, :uf, :opening_hours,
-        :company_name, :trading_name, :document, :address)
+      params.require(:organization).permit(:number, :district, :complement,
+        :cep, :city, :uf, :opening_hours, :company_name, :trading_name, :document, :address)
     end
   end

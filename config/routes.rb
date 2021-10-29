@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :time_sheets
   namespace 'api' do
     namespace 'v1' do
       devise_for :users,
@@ -16,6 +15,7 @@ Rails.application.routes.draw do
       resources :roles
       resources :occupations
       resources :worker_legals
+      resources :time_sheets
     end  
   end
 end

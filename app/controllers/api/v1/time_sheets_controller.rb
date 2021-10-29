@@ -1,10 +1,9 @@
-class TimeSheetsController < ApplicationController
+class Api::V1::TimeSheetsController < ApplicationController
   before_action :set_time_sheet, only: [:show, :update, :destroy]
 
   # GET /time_sheets
   def index
     @time_sheets = TimeSheet.all
-
     render json: @time_sheets
   end
 
